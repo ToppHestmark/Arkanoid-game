@@ -1,4 +1,4 @@
-import { Brick, Ball, Paddle } from "../sprites"; // Types
+import { Brick, Paddle, Ball } from "../sprites"; // Types
 
 export class CanvasView {
   canvas: HTMLCanvasElement;
@@ -32,7 +32,7 @@ export class CanvasView {
   }
 
   drawSprite(brick: Brick | Paddle | Ball): void {
-    !brick && null;
+    if (!brick) return;
 
     this.context?.drawImage(
       brick.image,
